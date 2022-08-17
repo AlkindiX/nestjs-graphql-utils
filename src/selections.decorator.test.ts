@@ -1,4 +1,4 @@
-import { FieldSelections } from "@jenyus-org/graphql-utils";
+import { FieldSelections } from "@alkindix/graphql-utils";
 import { expect } from "chai";
 import { describe } from "mocha";
 import { getGqlExecutionContext, getParamDecoratorFactory } from "./helpers";

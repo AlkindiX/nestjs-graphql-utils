@@ -1,4 +1,4 @@
-import { getFieldNode } from "@jenyus-org/graphql-utils";
+import { getFieldNode } from "@alkindix/graphql-utils";
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { GqlExecutionContext } from "@nestjs/graphql";
 import { FieldNode } from "graphql";

@@ -1,4 +1,4 @@
-import { resolveFields } from "@jenyus-org/graphql-utils";
+import { resolveFields } from "@alkindix/graphql-utils";
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { GqlExecutionContext } from "@nestjs/graphql";
 

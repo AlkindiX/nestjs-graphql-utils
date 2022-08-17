@@ -1,5 +1,5 @@
-import { resolveFieldMap } from "@jenyus-org/graphql-utils";
-import { FieldMap as IFieldMap } from "@jenyus-org/graphql-utils/dist/helpers";
+import { resolveFieldMap } from "@alkindix/graphql-utils";
+import { FieldMap as IFieldMap } from "@alkindix/graphql-utils/dist/helpers";
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { GqlExecutionContext } from "@nestjs/graphql";
 

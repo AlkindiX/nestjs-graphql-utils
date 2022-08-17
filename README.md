@@ -3,9 +3,9 @@
 ![License: MIT](https://img.shields.io/github/license/Jenyus-Org/graphql-utils)
 [![NPM Release](https://img.shields.io/npm/v/@jenyus-org/nestjs-graphql-utils)](https://www.npmjs.com/package/@jenyus-org/nestjs-graphql-utils)
 [![NPM Downloads](https://img.shields.io/npm/dw/@jenyus-org/nestjs-graphql-utils)](https://www.npmjs.com/package/@jenyus-org/nestjs-graphql-utils)
-[![NPM Type Definitions](https://img.shields.io/npm/types/@jenyus-org/graphql-utils)](https://www.npmjs.com/package/@jenyus-org/nestjs-graphql-utils)
+[![NPM Type Definitions](https://img.shields.io/npm/types/@alkindix/graphql-utils)](https://www.npmjs.com/package/@jenyus-org/nestjs-graphql-utils)
 
-`@jenyus-org/nestjs-graphql-utils` is a collection of utilities and decorators built on top of [`@jenyus-org/graphql-utils`](../graphql-utils/) to encourage the stateless nature of NestJS GraphQL resolvers and simplify the usage of helpers.
+`@jenyus-org/nestjs-graphql-utils` is a collection of utilities and decorators built on top of [`@alkindix/graphql-utils`](../graphql-utils/) to encourage the stateless nature of NestJS GraphQL resolvers and simplify the usage of helpers.
 
 - [nestjs-graphql-utils](#nestjs-graphql-utils)
   - [Documentation](#documentation)
@@ -49,10 +49,7 @@ import { PostsService } from "./posts.service";
 
 @Resolver(() => PostObject)
 class PostsResolver {
-  constructor(
-    private postsService: PostsService,
-    private usersService: UsersService
-  ) {}
+  constructor(private postsService: PostsService, private usersService: UsersService) {}
 
   @Query(() => [PostObject])
   posts(

@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import { GqlExecutionContext } from "@nestjs/graphql";
-import { FieldSelections, resolveSelections } from "@jenyus-org/graphql-utils";
+import { FieldSelections, resolveSelections } from "@alkindix/graphql-utils";
 
 export const Selections = (
   fieldSelections: string | (string | FieldSelections)[],
@@ -32,16 +32,16 @@ export const Selections = (
             field: fieldSelections,
             selections: withParent
               ? fields.map((f) =>
-                  typeof f === "string"
-                    ? {
-                        field: f,
-                        selector: [
-                          ...fieldSelections.split("."),
-                          ...f.split("."),
-                        ].join("."),
-                      }
-                    : f
-                )
+                typeof f === "string"
+                  ? {
+                    field: f,
+                    selector: [
+                      ...fieldSelections.split("."),
+                      ...f.split("."),
+                    ].join("."),
+                  }
+                  : f
+              )
               : fields,
           },
         ],
