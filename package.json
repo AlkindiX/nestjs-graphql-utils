@@ -1,6 +1,6 @@
 {
   "name": "@alkindix/nestjs-graphql-utils",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "NestJS utilities and decorators built around @alkindix/graphql-utils.",
   "main": "dist/index.js",
   "contributors": [
