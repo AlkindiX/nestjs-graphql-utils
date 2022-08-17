@@ -21,7 +21,7 @@
     "prepare": "npm run build",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },
-  "repository": "https://github.com/Jenyus-Org/graphql-utils.git",
+  "repository": "https://github.com/AlkindiX/nestjs-graphql-utils.git",
   "license": "MIT",
   "private": false,
   "types": "dist/index.d.ts",
