@@ -1,8 +1,9 @@
 {
   "name": "@alkindix/nestjs-graphql-utils",
-  "version": "1.6.6",
+  "version": "1.7.0",
   "description": "NestJS utilities and decorators built around @alkindix/graphql-utils.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "contributors": [
     "Dominik Berger (https://doemuulive-56e78.web.app/)",
     "RaviAnand Mohabir <moravrav@gmail.com> (https://ravianand.web.app)",
@@ -19,31 +20,33 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "mocha -r ts-node/register src/**/*.test.ts"
+    "test": "tsc && mocha \"dist/**/*.test.js\""
   },
   "repository": "https://github.com/AlkindiX/nestjs-graphql-utils.git",
   "license": "MIT",
   "private": false,
-  "types": "dist/index.d.ts",
   "dependencies": {
-    "@alkindix/graphql-utils": "^1.5.1",
-    "@nestjs/common": "^11.1.7",
-    "@nestjs/core": "^11.1.7",
-    "@nestjs/graphql": "^10.0.18",
-    "express": "^4.18.1",
-    "rxjs": "^7.5.6",
-    "ts-morph": "^15.1.0"
+    "@alkindix/graphql-utils": "^1.5.1"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.4.5 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
+    "@nestjs/graphql": "^10.0.18 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0",
+    "graphql": "^15.8.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
-    "@nestjs/testing": "^11.1.7",
-    "@types/express": "^4.17.7",
-    "@types/chai": "^4.3.3",
-    "@types/mocha": "^9.1.1",
-    "chai": "^4.3.6",
-    "mocha": "^10.0.0",
-    "node-mocks-http": "^1.11.0",
-    "reflect-metadata": "^0.1.13",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.7.4"
+    "@nestjs/common": "^12.6.0",
+    "@nestjs/core": "^12.6.0",
+    "@nestjs/graphql": "^14.2.1",
+    "@types/chai": "^5.2.3",
+    "@types/express": "^5.0.6",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^26.6.6",
+    "chai": "^6.3.0",
+    "graphql": "^17.1.0",
+    "mocha": "^12.0.3",
+    "node-mocks-http": "^1.18.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "typescript": "^6.0.3"
   }
 }
