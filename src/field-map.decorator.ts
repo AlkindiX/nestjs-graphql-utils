@@ -7,16 +7,14 @@ export const FieldMap = (
   deep: boolean = true,
   parent: string | string[] = []
 ) => {
-  return createParamDecorator<
-    {
-      deep: boolean;
-      parent: string | string[];
-    },
-    ExecutionContext,
-    IFieldMap
-  >(({ deep, parent }, context) => {
-    const ctx = GqlExecutionContext.create(context);
-    const info = ctx.getInfo();
-    return resolveFieldMap(info, deep, parent);
-  })({ deep, parent });
+  return createParamDecorator(
+    (
+      { deep, parent }: { deep: boolean; parent: string | string[] },
+      context: ExecutionContext
+    ): IFieldMap => {
+      const ctx = GqlExecutionContext.create(context);
+      const info = ctx.getInfo();
+      return resolveFieldMap(info, deep, parent);
+    }
+  )({ deep, parent });
 };

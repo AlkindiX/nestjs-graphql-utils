@@ -3,8 +3,8 @@ import { GqlExecutionContext } from "@nestjs/graphql";
 import { hasFields } from "@alkindix/graphql-utils";
 
 export const HasFields = (...fields: (string | string[])[]) => {
-  return createParamDecorator<(string | string[])[], ExecutionContext, boolean>(
-    (search, context) => {
+  return createParamDecorator(
+    (search: (string | string[])[], context: ExecutionContext): boolean => {
       const ctx = GqlExecutionContext.create(context);
       const info = ctx.getInfo();
       for (const field of search) {

@@ -13,15 +13,18 @@ export const Selections = (
     );
   }
 
-  return createParamDecorator<
+  return createParamDecorator((
     {
+      fieldSelections,
+      fields,
+      withParent,
+    }: {
       fieldSelections: string | (string | FieldSelections)[];
       fields?: (string | FieldSelections)[];
       withParent: boolean;
     },
-    ExecutionContext,
-    string[]
-  >(({ fieldSelections, fields, withParent }, context) => {
+    context: ExecutionContext
+  ): string[] => {
     const ctx = GqlExecutionContext.create(context);
     const info = ctx.getInfo();
 

@@ -6,16 +6,14 @@ export const Fields = (
   deep: boolean = true,
   parent: string | string[] = []
 ) => {
-  return createParamDecorator<
-    {
-      deep: boolean;
-      parent: string | string[];
-    },
-    ExecutionContext,
-    string[]
-  >(({ deep, parent }, context) => {
-    const ctx = GqlExecutionContext.create(context);
-    const info = ctx.getInfo();
-    return resolveFields(info, deep, parent);
-  })({ deep, parent });
+  return createParamDecorator(
+    (
+      { deep, parent }: { deep: boolean; parent: string | string[] },
+      context: ExecutionContext
+    ): string[] => {
+      const ctx = GqlExecutionContext.create(context);
+      const info = ctx.getInfo();
+      return resolveFields(info, deep, parent);
+    }
+  )({ deep, parent });
 };
